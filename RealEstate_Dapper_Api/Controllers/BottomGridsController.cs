@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using RealEstate_Dapper_Api.Repositories.BottomGridRepository;
+using RealEstate_Dapper_Api.Repositories.BottomGridRepositories;
 
 namespace RealEstate_Dapper_Api.Controllers
 {

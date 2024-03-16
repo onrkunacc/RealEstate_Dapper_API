@@ -3,7 +3,6 @@ using RealEstate_Dapper_Api.Dtos.BottomGridDtos;
 using RealEstate_Dapper_Api.Dtos.ProductDtos;
 using RealEstate_Dapper_Api.Dtos.ServiceDtos;
 using RealEstate_Dapper_Api.Models.DapperContext;
-using RealEstate_Dapper_Api.Repositories.BottomGridRepository;
 
 namespace RealEstate_Dapper_Api.Repositories.BottomGridRepositories
 {
