@@ -25,6 +25,7 @@ namespace RealEstate_Dapper_Api.Controllers
             return Ok(_statisticsRepository.ActiveEmployeeCount());
         }
 
+        //Bu bölüm tamamlanacakk.
 
     }
 }
