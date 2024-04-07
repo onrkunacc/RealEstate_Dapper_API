@@ -36,6 +36,17 @@ namespace RealEstate_Dapper_Api.Repositories.ProductRepository
             }
         }
 
+        public async Task<List<ResultProductDto>> GetLast5ProductAsync()
+        {
+            string query = "SELECT TOP(5) * FROM  Product ORDER BY ProductID DESC ";
+            using (var connection = _context.CreateConnection())
+            {
+                var values = await connection.QueryAsync<ResultProductDto>(query);
+                return values.ToList();
+                //dapperi kullandığımız kısıma geldik repositoryleri oluşturduk.Sorguları dapperla başlatmış olduk.
+            }
+        }
+
         public async void ProductDealOfTheDayStatusChangeToFalse(int id)
         {
             string query = "Update Product Set DealOfTheDay=0 where ProductID=@productID";
