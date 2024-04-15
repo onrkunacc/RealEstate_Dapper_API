@@ -22,7 +22,7 @@ namespace RealEstate_Dapper_UI.Controllers
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
                 var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
-                //jsonDatadan gelen json paketi deserialize edio bize values değeri olarak geri verecek.
+               
                 return View(values);
             }
 

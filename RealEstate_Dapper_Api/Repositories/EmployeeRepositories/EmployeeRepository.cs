@@ -27,7 +27,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
             using (var connection = _context.CreateConnection())
             {
                 await connection.ExecuteAsync(query, parameters);
-                //İşlemleri değişiklikleri veritabanına yansıtacak
+              
 
             }
         }
@@ -50,7 +50,7 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
             {
                 var values = await connection.QueryAsync<ResultEmployeeDto>(query);
                 return values.ToList();
-                //dapperi kullandığımız kısıma geldik repositoryleri oluşturduk.Sorguları dapperla başlatmış olduk.
+               
             }
         }
 
@@ -80,8 +80,6 @@ namespace RealEstate_Dapper_Api.Repositories.EmployeeRepositories
             using (var connection = _context.CreateConnection())
             {
                 await connection.ExecuteAsync(query, parameters);
-                //İşlemleri değişiklikleri veritabanına yansıtacak
-
             }
         }
     }
