@@ -17,14 +17,14 @@ namespace RealEstate_Dapper_UI.ViewComponents.Dashboard
             #region Statistics1- ToplamIlanSayısı
             var client1 = _httpClientFactory.CreateClient();
 
-            var responseMessage1 = await client1.GetAsync("https://localhost:44398/api/Statistics/ProductCount");
+            var responseMessage1 = await client1.GetAsync("https://localhost:7183/api/Statistics/ProductCount");
             var jsonData1 = await responseMessage1.Content.ReadAsStringAsync();
             ViewBag.productCount = jsonData1;
             #endregion
 
             #region Statistics2- EnBaşarılıPersonel
             var client2 = _httpClientFactory.CreateClient();
-            var responseMessage2 = await client2.GetAsync("https://localhost:44398/api/Statistics/EmployeeNameByMaxProductCount");
+            var responseMessage2 = await client2.GetAsync("https://localhost:7183/api/Statistics/EmployeeNameByMaxProductCount");
             var jsonData2 = await responseMessage2.Content.ReadAsStringAsync();
             ViewBag.employeeNameByMaxProductCount = jsonData2;
             #endregion
@@ -32,7 +32,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.Dashboard
             #region Statistics3- IlandakiŞehirSayıları
             var client3 = _httpClientFactory.CreateClient();
 
-            var responseMessage3 = await client3.GetAsync("https://localhost:44398/api/Statistics/DifferentCityCount");
+            var responseMessage3 = await client3.GetAsync("https://localhost:7183/api/Statistics/DifferentCityCount");
             var jsonData3 = await responseMessage3.Content.ReadAsStringAsync();
             ViewBag.differentCityCount = jsonData3;
             #endregion
@@ -40,7 +40,7 @@ namespace RealEstate_Dapper_UI.ViewComponents.Dashboard
             #region Statistics4- OrtalamaKiraFiyatı
             var client4 = _httpClientFactory.CreateClient();
 
-            var responseMessage4 = await client4.GetAsync("https://localhost:44398/api/Statistics/AverageProductPriceByRent");
+            var responseMessage4 = await client4.GetAsync("https://localhost:7183/api/Statistics/AverageProductPriceByRent");
             var jsonData4 = await responseMessage4.Content.ReadAsStringAsync();
             ViewBag.averageProductPriceByRent = jsonData4;
             #endregion

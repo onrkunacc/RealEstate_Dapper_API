@@ -20,7 +20,6 @@ namespace RealEstate_Dapper_Api.Controllers
         {
             var values = await _contactRepository.GetLast4Contact();
             return Ok(values);
-
         }
 
     }

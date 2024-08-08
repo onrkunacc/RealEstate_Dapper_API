@@ -19,7 +19,7 @@ namespace RealEstate_Dapper_UI.Controllers
         {
 
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44398/api/Products/ProductListWithCategory");
+            var responseMessage = await client.GetAsync("https://localhost:7183/api/Products/ProductListWithCategory");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -35,7 +35,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> CreateProduct()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44398/api/Categories");
+            var responseMessage = await client.GetAsync("https://localhost:7183/api/Categories");
 
             var jsonData = await responseMessage.Content.ReadAsStringAsync();
             var values = JsonConvert.DeserializeObject<List<ResultCategoryDto>>(jsonData);
@@ -55,7 +55,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> ProductDealOfTheDayStatusChangeToFalse(int id )
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44398/api/Products/ProductDealOfTheDayStatusChangeToFalse/" + id);
+            var responseMessage = await client.GetAsync("https://localhost:7183/api/Products/ProductDealOfTheDayStatusChangeToFalse/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -66,7 +66,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> ProductDealOfTheDayStatusChangeToTrue(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44398/api/Products/ProductDealOfTheDayStatusChangeToTrue/" + id);
+            var responseMessage = await client.GetAsync("https://localhost:7183/api/Products/ProductDealOfTheDayStatusChangeToTrue/" + id);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

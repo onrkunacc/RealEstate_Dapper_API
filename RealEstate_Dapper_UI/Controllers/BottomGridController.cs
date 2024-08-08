@@ -17,7 +17,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> Index()
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync("https://localhost:44398/api/BottomGrids");
+            var responseMessage = await client.GetAsync("https://localhost:7183/api/BottomGrids");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -42,7 +42,7 @@ namespace RealEstate_Dapper_UI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(createBottomGridDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PostAsync("https://localhost:44398/api/BottomGrids", stringContent);
+            var responseMessage = await client.PostAsync("https://localhost:7183/api/BottomGrids", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -54,7 +54,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> DeleteBottomGrid(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.DeleteAsync($"https://localhost:44398/api/BottomGrids/{id}");
+            var responseMessage = await client.DeleteAsync($"https://localhost:7183/api/BottomGrids/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");
@@ -67,7 +67,7 @@ namespace RealEstate_Dapper_UI.Controllers
         public async Task<IActionResult> UpdateBottomGrid(int id)
         {
             var client = _httpClientFactory.CreateClient();
-            var responseMessage = await client.GetAsync($"https://localhost:44398/api/BottomGrids/{id}");
+            var responseMessage = await client.GetAsync($"https://localhost:7183/api/BottomGrids/{id}");
             if (responseMessage.IsSuccessStatusCode)
             {
                 var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -83,7 +83,7 @@ namespace RealEstate_Dapper_UI.Controllers
             var client = _httpClientFactory.CreateClient();
             var jsonData = JsonConvert.SerializeObject(updateBottomGridDto);
             StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-            var responseMessage = await client.PutAsync("https://localhost:44398/api/BottomGrids/", stringContent);
+            var responseMessage = await client.PutAsync("https://localhost:7183/api/BottomGrids/", stringContent);
             if (responseMessage.IsSuccessStatusCode)
             {
                 return RedirectToAction("Index");

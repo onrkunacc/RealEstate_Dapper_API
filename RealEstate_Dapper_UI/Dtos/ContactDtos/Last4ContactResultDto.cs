@@ -1,4 +1,4 @@
-﻿namespace RealEstate_Dapper_UI.Dtos.ContactDtos
+﻿ namespace RealEstate_Dapper_UI.Dtos.ContactDtos
 {
     public class Last4ContactResultDto
     {
